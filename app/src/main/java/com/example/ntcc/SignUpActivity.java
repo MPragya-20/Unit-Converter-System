@@ -40,17 +40,23 @@ public class SignUpActivity extends AppCompatActivity {
                     String newUser = etname.getText().toString().trim();
                     String newEmail = etemail.getText().toString().trim();
                     String newPassword = etpass.getText().toString().trim();
+                    if (sharedPreferences.getAll().containsKey(newUser+newPassword)) {
+                        Toast.makeText(getApplicationContext(), "Please try using different username..", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        SharedPreferences.Editor myditor = sharedPreferences.edit();
+                        myditor.putString(newUser + newPassword, newUser + '@' + newEmail + '@' + newPassword);
+                        myditor.commit();
 
-                    SharedPreferences.Editor myditor = sharedPreferences.edit();
-                    myditor.putString(newUser + newPassword, newUser + '@' + newEmail + '@' + newPassword);
-                    myditor.commit();
-
-                    Intent newIntentobject1 = new Intent(SignUpActivity.this, LoginActivity.class);
-                    startActivity(newIntentobject1);
-                    Toast.makeText(getApplicationContext(), "Redirecting you to the login page", Toast.LENGTH_SHORT).show();
+                        Intent newIntentobject1 = new Intent(SignUpActivity.this, LoginActivity.class);
+                        startActivity(newIntentobject1);
+                        Toast.makeText(getApplicationContext(), "Redirecting you to the login page", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
+
+
     }
     public void gotosignin(View v){
         Intent newIntentobject2 = new Intent(SignUpActivity.this, LoginActivity.class);
