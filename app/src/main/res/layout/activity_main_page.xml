@@ -3,24 +3,124 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainPageActivity">
-
+    tools:context=".MainPageActivity"
+    android:background="#8c52ff">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:padding="20dp"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
         android:textSize="20dp"
-        android:text="Welcome!!"
+        android:text="HI USER,"
+        android:padding="50dp"
+        android:textColor="@color/white"
+        android:background="@drawable/circle"
+        android:layout_marginLeft="-35dp"
+        android:layout_marginTop="-35dp"
         android:id="@+id/wlcmUser"/>
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:orientation="vertical"
+        android:layout_marginTop="-20dp"
+        android:paddingBottom="100dp"
+        android:background="@drawable/rectangle"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+
+        <TextView
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Select the conversion system from the dropdown"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="20dp"
+        android:textColorHint="#808080"
+        android:textSize="18dp"
         android:gravity="center"
-        android:layout_marginTop="50dp"
-        android:text="This is the main page of the app" />
+        ></TextView>
+        <Spinner
+            android:id="@+id/unitDropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginRight="20dp"
+            android:minHeight="40dp"
+            android:background="@drawable/style_spinner"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/prompt"
+            android:textColor="@color/purple_700"
+            android:textSize="12dp"
+            android:text=""
+            ></TextView>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter value"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColorHint="#808080"
+            android:textColor="@color/black"
+            android:id="@+id/inputvalue"
+            ></EditText>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Output"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColorHint="#808080"
+            android:id="@+id/outputconverted"
+            android:textSize="20dp"
+            ></TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="CONVERT"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:backgroundTint="#8c52ff"
+                android:textColor="@color/white"
+                android:id="@+id/convertButton"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:onClick="convertnow"></Button>
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Clear"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:backgroundTint="#808099"
+                android:textColor="@color/white"
+                android:id="@+id/clearButton"
+                android:layout_marginBottom="20dp"
+                android:onClick="clear"></Button>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
 </LinearLayout>

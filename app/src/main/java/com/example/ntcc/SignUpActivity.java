@@ -45,7 +45,7 @@ public class SignUpActivity extends AppCompatActivity {
                     }
                     else {
                         SharedPreferences.Editor myditor = sharedPreferences.edit();
-                        myditor.putString(newUser + newPassword, newUser + '@' + newEmail + '@' + newPassword);
+                        myditor.putString(newUser + newPassword, newUser + '&' + newEmail + '&' + newPassword);
                         myditor.commit();
 
                         Intent newIntentobject1 = new Intent(SignUpActivity.this, LoginActivity.class);
